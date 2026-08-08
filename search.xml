@@ -1,28 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2026/07/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+    <title>用 Hexo 发布一篇新文章</title>
+    <url>/2026/08/08/hexo-guide/</url>
+    <content><![CDATA[<p>本站使用 Hexo 构建，通过 GitHub Pages 发布。</p>
+<span id="more"></span>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>访问 <a href="http://localhost:4000/">http://localhost:4000</a> 查看效果。</p>
+<h2 id="构建并发布"><a href="#构建并发布" class="headerlink" title="构建并发布"></a>构建并发布</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub Pages</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欢迎来到 PlrNc 的小站</title>
+    <url>/2026/08/08/welcome/</url>
+    <content><![CDATA[<p>欢迎来到我的博客！这里会记录我的学习笔记、踩坑记录和日常随笔。</p>
+<span id="more"></span>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="这里有什么"><a href="#这里有什么" class="headerlink" title="这里有什么"></a>这里有什么</h2><ul>
+<li>学习过程中的笔记和总结</li>
+<li>编程踩坑记录与解决方案</li>
+<li>一些生活随笔</li>
+</ul>
+<h2 id="如何开始"><a href="#如何开始" class="headerlink" title="如何开始"></a>如何开始</h2><p>我会在这里不定期更新内容。你也可以通过站内搜索查找感兴趣的文章。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
-        <tag>测试</tag>
+        <tag>博客</tag>
+        <tag>生活</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Markdown 写作示例</title>
+    <url>/2026/08/08/markdown-guide/</url>
+    <content><![CDATA[<p>这篇文章展示博客中常用的 Markdown 写法。</p>
+<span id="more"></span>
+
+<h2 id="标题和列表"><a href="#标题和列表" class="headerlink" title="标题和列表"></a>标题和列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
+<li>第一条</li>
+<li>第二条</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ol>
+<li>第一步</li>
+<li>第二步</li>
+</ol>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
+<p>保持热爱，奔赴山海。</p>
+</blockquote>
+<h2 id="链接与图片"><a href="#链接与图片" class="headerlink" title="链接与图片"></a>链接与图片</h2><p><a href="https://github.com/PlrNc">GitHub</a></p>
+<p><img src="/img/avatar.svg" alt="示例图片"></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>写作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于我</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<p>你好，我是 <strong>PlrNc</strong>，一个正在学习编程的小白。</p>
+<p>这里记录着我的学习之路与日常随笔。</p>
+<h2 id="技能栈"><a href="#技能栈" class="headerlink" title="技能栈"></a>技能栈</h2><ul>
+<li>前端开发：HTML &#x2F; CSS &#x2F; JavaScript</li>
+<li>后端开发：正在学习中</li>
+<li>其他：持续探索中</li>
+</ul>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>GitHub: <a href="https://github.com/PlrNc">PlrNc</a></li>
+<li>Bilibili: <a href="https://space.bilibili.com/3546730735864663">PlrNc</a></li>
+</ul>
+<blockquote>
+<p>保持热爱，奔赴山海。</p>
+</blockquote>
+]]></content>
+  </entry>
+  <entry>
+    <title>所有标签</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>所有分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
