@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>欢迎来到 PlrNc 的小站</title>
+    <url>/2026/08/08/welcome/</url>
+    <content><![CDATA[<p>欢迎来到我的博客！这里会记录我的学习笔记、踩坑记录和日常随笔。</p>
+<span id="more"></span>
+
+<h2 id="这里有什么"><a href="#这里有什么" class="headerlink" title="这里有什么"></a>这里有什么</h2><ul>
+<li>学习过程中的笔记和总结</li>
+<li>编程踩坑记录与解决方案</li>
+<li>一些生活随笔</li>
+</ul>
+<h2 id="如何开始"><a href="#如何开始" class="headerlink" title="如何开始"></a>如何开始</h2><p>我会在这里不定期更新内容。你也可以通过站内搜索查找感兴趣的文章。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用 Hexo 发布一篇新文章</title>
+    <url>/2026/08/08/hexo-guide/</url>
+    <content><![CDATA[<p>本站使用 Hexo 构建，通过 GitHub Pages 发布。</p>
+<span id="more"></span>
+
+<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<p>访问 <a href="http://localhost:4000/">http://localhost:4000</a> 查看效果。</p>
+<h2 id="构建并发布"><a href="#构建并发布" class="headerlink" title="构建并发布"></a>构建并发布</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub Pages</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown 写作示例</title>
     <url>/2026/08/08/markdown-guide/</url>
     <content><![CDATA[<p>这篇文章展示博客中常用的 Markdown 写法。</p>
@@ -31,46 +73,14 @@
       </tags>
   </entry>
   <entry>
-    <title>用 Hexo 发布一篇新文章</title>
-    <url>/2026/08/08/hexo-guide/</url>
-    <content><![CDATA[<p>本站使用 Hexo 构建，通过 GitHub Pages 发布。</p>
-<span id="more"></span>
-
-<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;文章标题&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>访问 <a href="http://localhost:4000/">http://localhost:4000</a> 查看效果。</p>
-<h2 id="构建并发布"><a href="#构建并发布" class="headerlink" title="构建并发布"></a>构建并发布</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>GitHub Pages</tag>
-      </tags>
+    <title>所有标签</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>欢迎来到 PlrNc 的小站</title>
-    <url>/2026/08/08/welcome/</url>
-    <content><![CDATA[<p>欢迎来到我的博客！这里会记录我的学习笔记、踩坑记录和日常随笔。</p>
-<span id="more"></span>
-
-<h2 id="这里有什么"><a href="#这里有什么" class="headerlink" title="这里有什么"></a>这里有什么</h2><ul>
-<li>学习过程中的笔记和总结</li>
-<li>编程踩坑记录与解决方案</li>
-<li>一些生活随笔</li>
-</ul>
-<h2 id="如何开始"><a href="#如何开始" class="headerlink" title="如何开始"></a>如何开始</h2><p>我会在这里不定期更新内容。你也可以通过站内搜索查找感兴趣的文章。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>生活</tag>
-      </tags>
+    <title>所有分类</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>关于我</title>
@@ -90,16 +100,6 @@
 <p>保持热爱，奔赴山海。</p>
 </blockquote>
 ]]></content>
-  </entry>
-  <entry>
-    <title>所有标签</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>所有分类</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title></title>
