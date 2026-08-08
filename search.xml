@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Markdown 写作示例</title>
+    <url>/2026/08/08/markdown-guide/</url>
+    <content><![CDATA[<p>这篇文章展示博客中常用的 Markdown 写法。</p>
+<span id="more"></span>
+
+<h2 id="标题和列表"><a href="#标题和列表" class="headerlink" title="标题和列表"></a>标题和列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
+<li>第一条</li>
+<li>第二条</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ol>
+<li>第一步</li>
+<li>第二步</li>
+</ol>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
+<p>保持热爱，奔赴山海。</p>
+</blockquote>
+<h2 id="链接与图片"><a href="#链接与图片" class="headerlink" title="链接与图片"></a>链接与图片</h2><p><a href="https://github.com/PlrNc">GitHub</a></p>
+<p><img src="/img/avatar.svg" alt="示例图片"></p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>写作</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用 Hexo 发布一篇新文章</title>
     <url>/2026/08/08/hexo-guide/</url>
     <content><![CDATA[<p>本站使用 Hexo 构建，通过 GitHub Pages 发布。</p>
@@ -43,36 +73,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Markdown 写作示例</title>
-    <url>/2026/08/08/markdown-guide/</url>
-    <content><![CDATA[<p>这篇文章展示博客中常用的 Markdown 写法。</p>
-<span id="more"></span>
-
-<h2 id="标题和列表"><a href="#标题和列表" class="headerlink" title="标题和列表"></a>标题和列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
-<li>第一条</li>
-<li>第二条</li>
-</ul>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ol>
-<li>第一步</li>
-<li>第二步</li>
-</ol>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">hello</span>(<span class="params">name</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Hello, <span class="subst">$&#123;name&#125;</span>!`</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
-<p>保持热爱，奔赴山海。</p>
-</blockquote>
-<h2 id="链接与图片"><a href="#链接与图片" class="headerlink" title="链接与图片"></a>链接与图片</h2><p><a href="https://github.com/PlrNc">GitHub</a></p>
-<p><img src="/img/avatar.svg" alt="示例图片"></p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>Markdown</tag>
-        <tag>写作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于我</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p>你好，我是 <strong>PlrNc</strong>，一个正在学习编程的小白。</p>
@@ -100,5 +100,511 @@
     <title>所有分类</title>
     <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/js/avatar-interaction.js</url>
+    <content><![CDATA[/* Avatar hover interaction: constant rotation + elastic scale with smooth resume */
+(function () {
+  'use strict';
+
+  function randomBetween(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  function buildScaleFrames() {
+    var peak = randomBetween(1.5, 1.7);
+    return [
+      [0.0, 1.0],
+      [0.12, peak],
+      [0.28, 1 + (peak - 1) * 0.55],
+      [0.44, 1 + (peak - 1) * 0.82],
+      [0.62, 1 + (peak - 1) * 0.62],
+      [0.8, 1 + (peak - 1) * 0.74],
+      [1.0, 1.0]
+    ];
+  }
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function easeOutBack(t) {
+    var c1 = 1.70158;
+    var c3 = c1 + 1;
+    return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+  }
+
+  function scaleAt(phase, frames) {
+    var t = phase % 1;
+    for (var i = 1; i < frames.length; i++) {
+      var prev = frames[i - 1];
+      var next = frames[i];
+      if (t <= next[0]) {
+        var local = (t - prev[0]) / (next[0] - prev[0]);
+        var eased = easeOutBack(local);
+        return prev[1] + (next[1] - prev[1]) * eased;
+      }
+    }
+    return frames[frames.length - 1][1];
+  }
+
+  var states = [];
+
+  function initAvatar(el) {
+    var state = {
+      el: el,
+      angle: 0,
+      phase: Math.random(),
+      hovered: false,
+      returning: false,
+      returnStart: 0,
+      fromAngle: 0,
+      fromPhase: 0,
+      rotateMs: randomBetween(1800, 2200),
+      scalePeriodMs: randomBetween(750, 950),
+      returnMs: randomBetween(600, 800),
+      frames: buildScaleFrames()
+    };
+    el.__avatarState = state;
+
+    el.addEventListener('mouseenter', function () {
+      state.hovered = true;
+      state.returning = false;
+    });
+
+    el.addEventListener('mouseleave', function () {
+      state.hovered = false;
+      state.returning = true;
+      state.returnStart = performance.now();
+      state.fromAngle = state.angle;
+      state.fromPhase = state.phase;
+    });
+
+    return state;
+  }
+
+  function bindAvatars() {
+    var els = document.querySelectorAll('.avatar-img');
+    for (var i = 0; i < els.length; i++) {
+      if (!els[i].__avatarState) {
+        states.push(initAvatar(els[i]));
+      }
+    }
+  }
+
+  function tick(now) {
+    var dt = Math.min(100, now - (tick.last || now));
+    tick.last = now;
+
+    for (var i = states.length - 1; i >= 0; i--) {
+      var s = states[i];
+      if (!document.body.contains(s.el)) {
+        states.splice(i, 1);
+        continue;
+      }
+
+      if (s.hovered) {
+        s.angle = (s.angle + (dt / s.rotateMs) * 360) % 360;
+        s.phase = (s.phase + dt / s.scalePeriodMs) % 1;
+        s.el.style.transform = 'rotate(' + s.angle.toFixed(3) + 'deg) scale(' + scaleAt(s.phase, s.frames).toFixed(4) + ')';
+      } else if (s.returning) {
+        var progress = Math.min(1, (now - s.returnStart) / s.returnMs);
+        var eased = easeOutCubic(progress);
+        s.angle = s.fromAngle * (1 - eased);
+        s.phase = s.fromPhase * (1 - eased);
+        s.el.style.transform = 'rotate(' + s.angle.toFixed(3) + 'deg) scale(' + scaleAt(s.phase, s.frames).toFixed(4) + ')';
+        if (progress >= 1) {
+          s.angle = 0;
+          s.phase = 0;
+          s.returning = false;
+          s.el.style.transform = 'rotate(0deg) scale(1)';
+        }
+      }
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  bindAvatars();
+  document.addEventListener('DOMContentLoaded', bindAvatars);
+  window.addEventListener('pjax:complete', bindAvatars);
+  requestAnimationFrame(tick);
+})();
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/css/custom.css</url>
+    <content><![CDATA[/* PlrNc 深色科技风定制样式 */
+
+/* ========== 主题变量 ========== */
+html[data-theme='dark'] {
+  --global-bg: #0a0f1e;
+  --font-color: #dbe9ff;
+  --card-bg: rgba(17, 27, 48, 0.82);
+  --card-meta: #8fa3c8;
+  --text-bg-hover: rgba(56, 189, 248, 0.12);
+  --hr-border: rgba(56, 189, 248, 0.18);
+  --hr-before-color: #38bdf8;
+  --search-bg: #111b30;
+  --search-input-color: #dbe9ff;
+  --search-a-color: #38bdf8;
+  --preloader-bg: #0a0f1e;
+  --preloader-color: #38bdf8;
+  --sidebar-bg: #0d1424;
+  --sidebar-menu-bg: #111b30;
+  --blockquote-color: #9ac9ff;
+  --blockquote-bg: rgba(56, 189, 248, 0.08);
+  --toc-link-color: #8fa3c8;
+  --scrollbar-color: #38bdf8;
+  --card-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  --card-hover-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --mark-bg: rgba(4, 10, 24, 0.45);
+}
+
+html[data-theme='light'] {
+  --global-bg: #eef3fa;
+  --font-color: #1f2937;
+  --card-bg: #ffffff;
+  --card-meta: #64748b;
+  --text-bg-hover: rgba(37, 99, 235, 0.08);
+  --hr-border: #dbe7f3;
+  --hr-before-color: #38bdf8;
+  --search-bg: #ffffff;
+  --search-input-color: #1f2937;
+  --search-a-color: #0ea5e9;
+  --preloader-bg: #eef3fa;
+  --preloader-color: #0ea5e9;
+  --sidebar-bg: #f7fafd;
+  --sidebar-menu-bg: #ffffff;
+  --blockquote-color: #2563eb;
+  --blockquote-bg: rgba(37, 99, 235, 0.06);
+  --toc-link-color: #475569;
+  --scrollbar-color: #38bdf8;
+  --card-box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  --card-hover-box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+  --mark-bg: rgba(238, 243, 250, 0.5);
+}
+
+/* ========== 页面背景：细网格科技感 ========== */
+body {
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-color: var(--global-bg);
+}
+
+html[data-theme='light'] body {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+}
+
+/* ========== 导航栏：吸顶毛玻璃 ========== */
+#nav,
+#page-header.nav-fixed #nav,
+#page-header.not-top-img #nav {
+  background: rgba(13, 20, 36, 0.72) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hr-border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18) !important;
+}
+
+html[data-theme='light'] #nav,
+html[data-theme='light'] #page-header.nav-fixed #nav,
+html[data-theme='light'] #page-header.not-top-img #nav {
+  background: rgba(255, 255, 255, 0.78) !important;
+}
+
+#nav a,
+#nav .site-page,
+#nav .menus_items a {
+  color: var(--font-color);
+}
+
+#nav a:hover,
+#nav .site-page:hover,
+#nav .menus_items a:hover {
+  color: #38bdf8;
+}
+
+/* ========== 首页横幅：压缩高度 + 渐变网格 ========== */
+#page-header.full_page {
+  height: 62vh !important;
+  min-height: 420px;
+  background:
+    linear-gradient(180deg, rgba(10, 15, 30, 0.35), rgba(10, 15, 30, 0.78)),
+    linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(124, 58, 237, 0.14)),
+    #0a0f1e;
+}
+
+#page-header.full_page #site-info {
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+#site-title {
+  background: linear-gradient(90deg, #38bdf8, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
+}
+
+#site-subtitle {
+  color: #a8c1e8 !important;
+  text-shadow: none;
+}
+
+/* 文章页与非首页横幅 */
+#page-header.post-bg,
+#page-header.not-home-page {
+  background:
+    linear-gradient(180deg, rgba(10, 15, 30, 0.2), rgba(10, 15, 30, 0.82)),
+    linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(124, 58, 237, 0.18)),
+    #0a0f1e;
+}
+
+#page-header.post-bg {
+  height: 340px !important;
+}
+
+#page-header.not-home-page {
+  height: 320px !important;
+}
+
+/* ========== 玻璃卡片 ========== */
+.recent-post-item,
+.card-widget,
+.post-block,
+.layout_post .post-block,
+#pagination,
+.search-dialog {
+  background: var(--card-bg);
+  border: 1px solid var(--hr-border);
+  border-radius: 8px;
+  box-shadow: var(--card-box-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.recent-post-item:hover,
+.card-widget:hover,
+.post-block:hover {
+  box-shadow: var(--card-hover-box-shadow);
+}
+
+/* ========== 首页文章列表 ========== */
+#recent-posts .recent-post-item {
+  padding: 18px 20px;
+}
+
+.recent-post-item .article-title a {
+  color: var(--font-color);
+}
+
+.recent-post-item .article-title a:hover {
+  color: #38bdf8;
+}
+
+.recent-post-item .article-meta-wrap,
+.article-meta-wrap {
+  color: var(--card-meta);
+}
+
+/* ========== 文章正文 ========== */
+.post-content {
+  color: var(--font-color);
+}
+
+.post-content a {
+  color: #38bdf8;
+}
+
+html[data-theme='light'] .post-content a {
+  color: #0ea5e9;
+}
+
+.post-content blockquote {
+  color: var(--blockquote-color);
+  background: var(--blockquote-bg);
+}
+
+/* ========== 代码块 ========== */
+.post-content .highlight,
+.post-content pre {
+  background: #0b1220 !important;
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: 8px;
+}
+
+.post-content code {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--font-color);
+}
+
+.post-content .highlight code {
+  background: transparent;
+}
+
+/* ========== 标签与分类胶囊 ========== */
+.tag-cloud-list a,
+.category-lists .category-list a,
+.article-tags a,
+.tag-list a {
+  display: inline-flex;
+  align-items: center;
+  margin: 4px;
+  padding: 4px 12px;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--font-color);
+}
+
+.tag-cloud-list a:hover,
+.category-lists .category-list a:hover,
+.article-tags a:hover,
+.tag-list a:hover {
+  color: #38bdf8;
+  border-color: #38bdf8;
+}
+
+/* ========== 分页 ========== */
+#pagination .page-number,
+#pagination .extend {
+  background: var(--card-bg);
+  border: 1px solid var(--hr-border);
+  border-radius: 8px;
+  color: var(--font-color);
+}
+
+#pagination .page-number.current {
+  background: linear-gradient(135deg, #38bdf8, #7c3aed);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+/* ========== 搜索弹窗 ========== */
+.search-dialog {
+  background: var(--search-bg) !important;
+}
+
+.search-dialog input {
+  color: var(--search-input-color);
+  border-bottom-color: #38bdf8;
+}
+
+.search-result-title a {
+  color: #38bdf8;
+}
+
+/* ========== 侧边栏 ========== */
+#aside-content .card-widget,
+.aside-content .card-widget {
+  border: 1px solid var(--hr-border);
+  border-radius: 8px;
+  box-shadow: var(--card-box-shadow);
+}
+
+/* 头像悬停：慢速持续旋转 + 果冻弹性放大 */
+.avatar-img,
+.avatar-img img {
+  animation: none;
+}
+
+.avatar-img {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.avatar-img:hover img {
+  transform: none;
+}
+
+#aside-content .card-widget.card-info,
+.aside-content .card-widget.card-info {
+  overflow: visible;
+}
+
+#aside-content .avatar-img,
+.aside-content .avatar-img {
+  position: relative;
+  z-index: 2;
+}
+
+#aside-content .card-widget .item-headline,
+.aside-content .card-widget .item-headline {
+  color: var(--font-color);
+}
+
+.card-widget a {
+  color: var(--font-color);
+}
+
+.card-widget a:hover {
+  color: #38bdf8;
+}
+
+/* ========== 页脚 ========== */
+#footer {
+  background: transparent;
+  border-top: 1px solid var(--hr-border);
+}
+
+#footer,
+#footer a {
+  color: var(--card-meta);
+}
+
+/* ========== 右侧按钮与滚动条 ========== */
+#rightside .rightside-item a {
+  background: var(--card-bg);
+  border: 1px solid var(--hr-border);
+  border-radius: 8px;
+  color: var(--font-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #38bdf8, #7c3aed);
+  border-radius: 4px;
+}
+
+/* ========== 移动端适配 ========== */
+@media (max-width: 768px) {
+  #page-header.full_page {
+    height: 46vh !important;
+    min-height: 360px;
+  }
+
+  #page-header.post-bg {
+    height: 300px !important;
+  }
+
+  #page-header.not-home-page {
+    height: 260px !important;
+  }
+
+  #recent-posts .recent-post-item {
+    padding: 16px 18px !important;
+  }
+
+  .card-widget {
+    padding: 14px 16px !important;
+  }
+
+  #page-header.full_page #site-title {
+    font-size: 2em;
+  }
+
+  #site-subtitle {
+    font-size: 1.1em;
+  }
+}
+]]></content>
   </entry>
 </search>

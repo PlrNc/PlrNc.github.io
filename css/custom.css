@@ -1,0 +1,369 @@
+/* PlrNc 深色科技风定制样式 */
+
+/* ========== 主题变量 ========== */
+html[data-theme='dark'] {
+  --global-bg: #0a0f1e;
+  --font-color: #dbe9ff;
+  --card-bg: rgba(17, 27, 48, 0.82);
+  --card-meta: #8fa3c8;
+  --text-bg-hover: rgba(56, 189, 248, 0.12);
+  --hr-border: rgba(56, 189, 248, 0.18);
+  --hr-before-color: #38bdf8;
+  --search-bg: #111b30;
+  --search-input-color: #dbe9ff;
+  --search-a-color: #38bdf8;
+  --preloader-bg: #0a0f1e;
+  --preloader-color: #38bdf8;
+  --sidebar-bg: #0d1424;
+  --sidebar-menu-bg: #111b30;
+  --blockquote-color: #9ac9ff;
+  --blockquote-bg: rgba(56, 189, 248, 0.08);
+  --toc-link-color: #8fa3c8;
+  --scrollbar-color: #38bdf8;
+  --card-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  --card-hover-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --mark-bg: rgba(4, 10, 24, 0.45);
+}
+
+html[data-theme='light'] {
+  --global-bg: #eef3fa;
+  --font-color: #1f2937;
+  --card-bg: #ffffff;
+  --card-meta: #64748b;
+  --text-bg-hover: rgba(37, 99, 235, 0.08);
+  --hr-border: #dbe7f3;
+  --hr-before-color: #38bdf8;
+  --search-bg: #ffffff;
+  --search-input-color: #1f2937;
+  --search-a-color: #0ea5e9;
+  --preloader-bg: #eef3fa;
+  --preloader-color: #0ea5e9;
+  --sidebar-bg: #f7fafd;
+  --sidebar-menu-bg: #ffffff;
+  --blockquote-color: #2563eb;
+  --blockquote-bg: rgba(37, 99, 235, 0.06);
+  --toc-link-color: #475569;
+  --scrollbar-color: #38bdf8;
+  --card-box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  --card-hover-box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+  --mark-bg: rgba(238, 243, 250, 0.5);
+}
+
+/* ========== 页面背景：细网格科技感 ========== */
+body {
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-color: var(--global-bg);
+}
+
+html[data-theme='light'] body {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+}
+
+/* ========== 导航栏：吸顶毛玻璃 ========== */
+#nav,
+#page-header.nav-fixed #nav,
+#page-header.not-top-img #nav {
+  background: rgba(13, 20, 36, 0.72) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hr-border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18) !important;
+}
+
+html[data-theme='light'] #nav,
+html[data-theme='light'] #page-header.nav-fixed #nav,
+html[data-theme='light'] #page-header.not-top-img #nav {
+  background: rgba(255, 255, 255, 0.78) !important;
+}
+
+#nav a,
+#nav .site-page,
+#nav .menus_items a {
+  color: var(--font-color);
+}
+
+#nav a:hover,
+#nav .site-page:hover,
+#nav .menus_items a:hover {
+  color: #38bdf8;
+}
+
+/* ========== 首页横幅：压缩高度 + 渐变网格 ========== */
+#page-header.full_page {
+  height: 62vh !important;
+  min-height: 420px;
+  background:
+    linear-gradient(180deg, rgba(10, 15, 30, 0.35), rgba(10, 15, 30, 0.78)),
+    linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(124, 58, 237, 0.14)),
+    #0a0f1e;
+}
+
+#page-header.full_page #site-info {
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+#site-title {
+  background: linear-gradient(90deg, #38bdf8, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-shadow: none;
+}
+
+#site-subtitle {
+  color: #a8c1e8 !important;
+  text-shadow: none;
+}
+
+/* 文章页与非首页横幅 */
+#page-header.post-bg,
+#page-header.not-home-page {
+  background:
+    linear-gradient(180deg, rgba(10, 15, 30, 0.2), rgba(10, 15, 30, 0.82)),
+    linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(124, 58, 237, 0.18)),
+    #0a0f1e;
+}
+
+#page-header.post-bg {
+  height: 340px !important;
+}
+
+#page-header.not-home-page {
+  height: 320px !important;
+}
+
+/* ========== 玻璃卡片 ========== */
+.recent-post-item,
+.card-widget,
+.post-block,
+.layout_post .post-block,
+#pagination,
+.search-dialog {
+  background: var(--card-bg);
+  border: 1px solid var(--hr-border);
+  border-radius: 8px;
+  box-shadow: var(--card-box-shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.recent-post-item:hover,
+.card-widget:hover,
+.post-block:hover {
+  box-shadow: var(--card-hover-box-shadow);
+}
+
+/* ========== 首页文章列表 ========== */
+#recent-posts .recent-post-item {
+  padding: 18px 20px;
+}
+
+.recent-post-item .article-title a {
+  color: var(--font-color);
+}
+
+.recent-post-item .article-title a:hover {
+  color: #38bdf8;
+}
+
+.recent-post-item .article-meta-wrap,
+.article-meta-wrap {
+  color: var(--card-meta);
+}
+
+/* ========== 文章正文 ========== */
+.post-content {
+  color: var(--font-color);
+}
+
+.post-content a {
+  color: #38bdf8;
+}
+
+html[data-theme='light'] .post-content a {
+  color: #0ea5e9;
+}
+
+.post-content blockquote {
+  color: var(--blockquote-color);
+  background: var(--blockquote-bg);
+}
+
+/* ========== 代码块 ========== */
+.post-content .highlight,
+.post-content pre {
+  background: #0b1220 !important;
+  border: 1px solid rgba(56, 189, 248, 0.16);
+  border-radius: 8px;
+}
+
+.post-content code {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--font-color);
+}
+
+.post-content .highlight code {
+  background: transparent;
+}
+
+/* ========== 标签与分类胶囊 ========== */
+.tag-cloud-list a,
+.category-lists .category-list a,
+.article-tags a,
+.tag-list a {
+  display: inline-flex;
+  align-items: center;
+  margin: 4px;
+  padding: 4px 12px;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.08);
+  color: var(--font-color);
+}
+
+.tag-cloud-list a:hover,
+.category-lists .category-list a:hover,
+.article-tags a:hover,
+.tag-list a:hover {
+  color: #38bdf8;
+  border-color: #38bdf8;
+}
+
+/* ========== 分页 ========== */
+#pagination .page-number,
+#pagination .extend {
+  background: var(--card-bg);
+  border: 1px solid var(--hr-border);
+  border-radius: 8px;
+  color: var(--font-color);
+}
+
+#pagination .page-number.current {
+  background: linear-gradient(135deg, #38bdf8, #7c3aed);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+/* ========== 搜索弹窗 ========== */
+.search-dialog {
+  background: var(--search-bg) !important;
+}
+
+.search-dialog input {
+  color: var(--search-input-color);
+  border-bottom-color: #38bdf8;
+}
+
+.search-result-title a {
+  color: #38bdf8;
+}
+
+/* ========== 侧边栏 ========== */
+#aside-content .card-widget,
+.aside-content .card-widget {
+  border: 1px solid var(--hr-border);
+  border-radius: 8px;
+  box-shadow: var(--card-box-shadow);
+}
+
+/* 头像悬停：慢速持续旋转 + 果冻弹性放大 */
+.avatar-img,
+.avatar-img img {
+  animation: none;
+}
+
+.avatar-img {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.avatar-img:hover img {
+  transform: none;
+}
+
+#aside-content .card-widget.card-info,
+.aside-content .card-widget.card-info {
+  overflow: visible;
+}
+
+#aside-content .avatar-img,
+.aside-content .avatar-img {
+  position: relative;
+  z-index: 2;
+}
+
+#aside-content .card-widget .item-headline,
+.aside-content .card-widget .item-headline {
+  color: var(--font-color);
+}
+
+.card-widget a {
+  color: var(--font-color);
+}
+
+.card-widget a:hover {
+  color: #38bdf8;
+}
+
+/* ========== 页脚 ========== */
+#footer {
+  background: transparent;
+  border-top: 1px solid var(--hr-border);
+}
+
+#footer,
+#footer a {
+  color: var(--card-meta);
+}
+
+/* ========== 右侧按钮与滚动条 ========== */
+#rightside .rightside-item a {
+  background: var(--card-bg);
+  border: 1px solid var(--hr-border);
+  border-radius: 8px;
+  color: var(--font-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #38bdf8, #7c3aed);
+  border-radius: 4px;
+}
+
+/* ========== 移动端适配 ========== */
+@media (max-width: 768px) {
+  #page-header.full_page {
+    height: 46vh !important;
+    min-height: 360px;
+  }
+
+  #page-header.post-bg {
+    height: 300px !important;
+  }
+
+  #page-header.not-home-page {
+    height: 260px !important;
+  }
+
+  #recent-posts .recent-post-item {
+    padding: 16px 18px !important;
+  }
+
+  .card-widget {
+    padding: 14px 16px !important;
+  }
+
+  #page-header.full_page #site-title {
+    font-size: 2em;
+  }
+
+  #site-subtitle {
+    font-size: 1.1em;
+  }
+}
